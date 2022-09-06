@@ -6,18 +6,20 @@
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
 		<version>43.0.0</version>
+		<relativePath />
 	</parent>
 
+	<groupId>sc.fiji</groupId>
 	<artifactId>TrackMate-ExTrack</artifactId>
 	<version>2.0.1-SNAPSHOT</version>
 
 	<name>TrackMate-ExTrack</name>
 	<description>TrackMate interface for the ExTrack track analysis software.</description>
-	<url>https://imagej.net/TrackMate-ExTrack</url>
+	<url>https://github.com/trackmate-sc/TrackMate-ExTrack</url>
 	<inceptionYear>2020</inceptionYear>
 	<organization>
-		<name>Institut Pasteur / IAH</name>
-		<url>https://https://research.pasteur.fr/en/team/image-analysis-hub//</url>
+		<name>TrackMate</name>
+		<url>https://github.com/trackmate-sc</url>
 	</organization>
 	<licenses>
 		<license>
@@ -26,53 +28,87 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	
+
 	<developers>
 		<developer>
 			<id>tinevez</id>
 			<name>Jean-Yves Tinevez</name>
-			<email>jean-yves.tinevez@pasteur.fr</email>
-			<url>https://research.pasteur.fr/fr/member/jean-yves-tinevez/</url>
-			<organization>Institut Pasteur</organization>
-			<organizationUrl>http://www.pasteur.fr/</organizationUrl>
+			<url>https://imagej.net/people/tinevez</url>
 			<roles>
+				<role>founder</role>
 				<role>lead</role>
 				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
 			</roles>
-			<timezone>+1</timezone>
 		</developer>
 	</developers>
-	
 	<contributors>
 		<contributor>
-			<name>grrrr</name>
+			<name>Curtis Rueden</name>
+			<url>https://imagej.net/people/ctrueden</url>
+			<properties><id>ctrueden</id></properties>
 		</contributor>
 	</contributors>
 
 	<mailingLists>
 		<mailingList>
 			<name>Image.sc Forum</name>
-			<archive>https://forum.image.sc/tag/fiji</archive>
+			<archive>https://forum.image.sc/tag/trackmate</archive>
 		</mailingList>
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:git://gitlab.pasteur.fr/iah/TrackMate-ExTrack</connection>
-		<developerConnection>scm:git:git@gitlab.pasteur.fr/TrackMate-ExTrack</developerConnection>
+		<connection>scm:git:https://github.com/trackmate-sc/TrackMate-ExTrack</connection>
+		<developerConnection>scm:git:git@github.com:trackmate-sc/TrackMate-ExTrack</developerConnection>
 		<tag>HEAD</tag>
-		<url>scm:git:git@gitlab.pasteur.fr:iah/TrackMate-ExTrack</url>
+		<url>https://github.com/trackmate-sc/TrackMate-ExTrack</url>
 	</scm>
-	
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://gitlab.pasteur.fr/iah/TrackMate-ExTrack/issues</url>
+		<url>https://github.com/trackmate-sc/TrackMate-ExTrack/issues</url>
 	</issueManagement>
-	
 	<ciManagement>
-		<system>Gitlab CI</system>
-		<url>https://gitlab.pasteur.fr/iah/TrackMate-ExTrack</url>
+		<system>GitHub Actions</system>
+		<url>https://github.com/trackmate-sc/TrackMate-ExTrack</url>
 	</ciManagement>
-	
+
+	<properties>
+		<package-name>fiji.plugin.trackmate.extrack</package-name>
+		<license.licenseName>gpl_v3</license.licenseName>
+		<license.copyrightOwners>Institut Pasteur.</license.copyrightOwners>
+		<license.projectName>TrackMate: your buddy for everyday tracking.</license.projectName>
+
+		<!-- NB: Deploy releases to the SciJava Maven repository. -->
+		<releaseProfiles>sign,deploy-to-scijava</releaseProfiles>
+		
+		<license.licenseName>gpl_v3</license.licenseName>
+		<releaseProfiles>deploy-to-scijava</releaseProfiles>
+		
+		<TrackMate.version>8.0.0</TrackMate.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>TrackMate</artifactId>
+		</dependency>
+
+		<!-- Fiji dependencies -->
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>pal-optimization</artifactId>
+		</dependency>
+
+		<!-- Other dependencies -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+	</dependencies>
+
 	<repositories>
 		<repository>
 			<id>scijava.public</id>
@@ -80,32 +116,4 @@
 		</repository>
 	</repositories>
 	
-	<properties>
-		<package-name>fiji.plugin.trackmate.extrack</package-name>
-		<license.licenseName>gpl_v3</license.licenseName>
-		<license.copyrightOwners>Institut Pasteur.</license.copyrightOwners>
-		<releaseProfiles>deploy-to-scijava</releaseProfiles>
-		
-		<TrackMate.version>8.0.0</TrackMate.version>
-	</properties>
-
-	<dependencies>
-
-		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>TrackMate</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>pal-optimization</artifactId>
-		</dependency>
-		
-		<dependency>
-		    <groupId>com.google.code.gson</groupId>
-    		<artifactId>gson</artifactId>
-		</dependency>
-		
-	</dependencies>
 </project>
-
