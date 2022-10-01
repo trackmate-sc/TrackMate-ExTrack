@@ -1,6 +1,6 @@
 /*-
 * #%L
- * TrackMate interface for the ExTrack track analysis software.
+ * TrackMate: your buddy for everyday tracking.
  * %%
  * Copyright (C) 2020 - 2025 Institut Pasteur.
  * %%
